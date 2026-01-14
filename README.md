@@ -18,10 +18,7 @@ A Windows Forms desktop application that enables users to interact with Google�
 
 ## About
 
-**GeminiForms** is a desktop application developed in **C# using Windows Forms**, created as part of the course:
-
-**ΑΝΤΙΚΕΙΜΕΝΟΣΤΡΕΦΗΣ ΑΝΑΠΤΥΞΗ ΕΦΑΡΜΟΓΩΝ 2025–2026**  
-**Τελική Εργασία 2/3 (2 μονάδες)**
+**GeminiForms** is a desktop application developed in **C# using Windows Forms**
 
 The purpose of this project is to design and implement an intelligent dialogue application that acts as an interface between the user and **Google’s Gemini AI model**.
 
