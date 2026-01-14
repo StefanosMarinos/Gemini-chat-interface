@@ -1,4 +1,4 @@
-# GeminiForms – Intelligent Dialogue Desktop Application
+# GeminiChat – Intelligent Dialogue Desktop Application
 
 A Windows Forms desktop application that enables users to interact with Google’s Gemini AI through a conversational interface, manage dialogue history, import/export conversations, and persist selected responses using a local SQLite database.
 
