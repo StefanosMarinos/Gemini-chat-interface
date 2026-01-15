@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("telikiergasia2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6afb722d27d644839a8607c5dc9ad2aac9b6406")]
 [assembly: System.Reflection.AssemblyProductAttribute("telikiergasia2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("telikiergasia2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
