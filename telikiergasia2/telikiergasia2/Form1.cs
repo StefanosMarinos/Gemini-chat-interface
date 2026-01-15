@@ -5,17 +5,19 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.SQLite;
 
+
 namespace telikiergasia2
 {
     public partial class Form1 : Form
     {
-        private const string ApiKey = "AIzaSyAVNoKRHauRSKEh-EsLjylTsAM7rLzlb00";
+        private const string ApiKey = "AIzaSyDTQuoxfp3w-jT9E_91_c6zCqRVZL_j8o8";
         private const string ModelId = "models/gemini-2.5-flash";
 
         private readonly string connectionString = "Data Source=Database.db;Version=3;";
         private readonly SQLiteConnection connection;
 
         private ChatSession _chatSession;
+
 
         public Form1()
         {
@@ -188,6 +190,21 @@ namespace telikiergasia2
         {
             Form form2 = new DataBase();
             form2.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

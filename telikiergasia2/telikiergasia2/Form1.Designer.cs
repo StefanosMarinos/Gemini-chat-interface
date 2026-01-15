@@ -48,134 +48,152 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.DimGray;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { αρχείοToolStripMenuItem, βάσηΔεδομένωνToolStripMenuItem, σχετικάToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Padding = new Padding(8, 2, 0, 2);
+            menuStrip1.Size = new Size(919, 33);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // αρχείοToolStripMenuItem
             // 
             αρχείοToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { νέοςΔιάλογοςToolStripMenuItem, εισαγωγηΕρώτησηςtxtToolStripMenuItem, εξαγωγηΔιαλόγουtxtToolStripMenuItem, έξοδοςToolStripMenuItem });
+            αρχείοToolStripMenuItem.ForeColor = Color.White;
             αρχείοToolStripMenuItem.Name = "αρχείοToolStripMenuItem";
-            αρχείοToolStripMenuItem.Size = new Size(70, 24);
+            αρχείοToolStripMenuItem.Size = new Size(85, 29);
             αρχείοToolStripMenuItem.Text = "Αρχείο";
             // 
             // νέοςΔιάλογοςToolStripMenuItem
             // 
             νέοςΔιάλογοςToolStripMenuItem.Name = "νέοςΔιάλογοςToolStripMenuItem";
-            νέοςΔιάλογοςToolStripMenuItem.Size = new Size(263, 26);
+            νέοςΔιάλογοςToolStripMenuItem.Size = new Size(313, 34);
             νέοςΔιάλογοςToolStripMenuItem.Text = "Νέος Διάλογος";
             νέοςΔιάλογοςToolStripMenuItem.Click += νέοςΔιάλογοςToolStripMenuItem_Click;
             // 
             // εισαγωγηΕρώτησηςtxtToolStripMenuItem
             // 
             εισαγωγηΕρώτησηςtxtToolStripMenuItem.Name = "εισαγωγηΕρώτησηςtxtToolStripMenuItem";
-            εισαγωγηΕρώτησηςtxtToolStripMenuItem.Size = new Size(263, 26);
+            εισαγωγηΕρώτησηςtxtToolStripMenuItem.Size = new Size(313, 34);
             εισαγωγηΕρώτησηςtxtToolStripMenuItem.Text = "Εισαγωγη Ερώτησης(.txt)";
             εισαγωγηΕρώτησηςtxtToolStripMenuItem.Click += εισαγωγηΕρώτησηςtxtToolStripMenuItem_Click;
             // 
             // εξαγωγηΔιαλόγουtxtToolStripMenuItem
             // 
             εξαγωγηΔιαλόγουtxtToolStripMenuItem.Name = "εξαγωγηΔιαλόγουtxtToolStripMenuItem";
-            εξαγωγηΔιαλόγουtxtToolStripMenuItem.Size = new Size(263, 26);
+            εξαγωγηΔιαλόγουtxtToolStripMenuItem.Size = new Size(313, 34);
             εξαγωγηΔιαλόγουtxtToolStripMenuItem.Text = "Εξαγωγη Διαλόγου (.txt)";
             εξαγωγηΔιαλόγουtxtToolStripMenuItem.Click += εξαγωγηΔιαλόγουtxtToolStripMenuItem_Click;
             // 
             // έξοδοςToolStripMenuItem
             // 
             έξοδοςToolStripMenuItem.Name = "έξοδοςToolStripMenuItem";
-            έξοδοςToolStripMenuItem.Size = new Size(263, 26);
+            έξοδοςToolStripMenuItem.Size = new Size(313, 34);
             έξοδοςToolStripMenuItem.Text = "Έξοδος";
             έξοδοςToolStripMenuItem.Click += έξοδοςToolStripMenuItem_Click;
             // 
             // βάσηΔεδομένωνToolStripMenuItem
             // 
             βάσηΔεδομένωνToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem, προβοληΙστορικούToolStripMenuItem });
+            βάσηΔεδομένωνToolStripMenuItem.ForeColor = Color.White;
             βάσηΔεδομένωνToolStripMenuItem.Name = "βάσηΔεδομένωνToolStripMenuItem";
-            βάσηΔεδομένωνToolStripMenuItem.Size = new Size(142, 24);
+            βάσηΔεδομένωνToolStripMenuItem.Size = new Size(167, 29);
             βάσηΔεδομένωνToolStripMenuItem.Text = "Βάση Δεδομένων";
             // 
             // αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem
             // 
             αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem.Name = "αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem";
-            αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem.Size = new Size(338, 26);
+            αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem.Size = new Size(404, 34);
             αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem.Text = "Αποθήκευση Τρέχουσας Απάντησης";
             αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem.Click += αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem_Click;
             // 
             // προβοληΙστορικούToolStripMenuItem
             // 
             προβοληΙστορικούToolStripMenuItem.Name = "προβοληΙστορικούToolStripMenuItem";
-            προβοληΙστορικούToolStripMenuItem.Size = new Size(338, 26);
+            προβοληΙστορικούToolStripMenuItem.Size = new Size(404, 34);
             προβοληΙστορικούToolStripMenuItem.Text = "Προβολη Ιστορικού";
             προβοληΙστορικούToolStripMenuItem.Click += προβοληΙστορικούToolStripMenuItem_Click;
             // 
             // σχετικάToolStripMenuItem
             // 
             σχετικάToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ηΟμάδαΜαςToolStripMenuItem });
+            σχετικάToolStripMenuItem.ForeColor = Color.White;
             σχετικάToolStripMenuItem.Name = "σχετικάToolStripMenuItem";
-            σχετικάToolStripMenuItem.Size = new Size(74, 24);
+            σχετικάToolStripMenuItem.Size = new Size(89, 29);
             σχετικάToolStripMenuItem.Text = "Σχετικά";
             // 
             // ηΟμάδαΜαςToolStripMenuItem
             // 
             ηΟμάδαΜαςToolStripMenuItem.Name = "ηΟμάδαΜαςToolStripMenuItem";
-            ηΟμάδαΜαςToolStripMenuItem.Size = new Size(181, 26);
+            ηΟμάδαΜαςToolStripMenuItem.Size = new Size(220, 34);
             ηΟμάδαΜαςToolStripMenuItem.Text = "Η ομάδα μας";
             ηΟμάδαΜαςToolStripMenuItem.Click += ηΟμάδαΜαςToolStripMenuItem_Click;
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(12, 69);
+            richTextBox1.BackColor = Color.DarkGray;
+            richTextBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            richTextBox1.Location = new Point(15, 86);
+            richTextBox1.Margin = new Padding(4);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new Size(776, 289);
+            richTextBox1.Size = new Size(867, 360);
             richTextBox1.TabIndex = 1;
             richTextBox1.Text = "";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 379);
+            textBox1.BackColor = Color.Silver;
+            textBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(15, 474);
+            textBox1.Margin = new Padding(4);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(492, 53);
+            textBox1.Size = new Size(614, 65);
             textBox1.TabIndex = 2;
+            textBox1.KeyDown += textBox1_KeyDown;
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(571, 379);
+            button1.BackColor = Color.Silver;
+            button1.Font = new Font("Gadugi", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(657, 474);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(173, 53);
+            button1.Size = new Size(225, 65);
             button1.TabIndex = 3;
             button1.Text = "Αποστολή";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 38);
+            label1.Font = new Font("Palatino Linotype", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(13, 33);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(122, 28);
+            label1.Size = new Size(223, 49);
             label1.TabIndex = 4;
             label1.Text = "Gemini chat";
+            label1.Click += label1_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gainsboro;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.DimGray;
+            ClientSize = new Size(919, 562);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(richTextBox1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(4);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
