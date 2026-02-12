@@ -180,7 +180,6 @@
             label1.Size = new Size(298, 65);
             label1.TabIndex = 4;
             label1.Text = "Gemini chat";
-            label1.Click += label1_Click;
             // 
             // Form1
             // 

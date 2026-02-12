@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.SQLite;
 
-
 namespace telikiergasia2
 {
     public partial class Form1 : Form
@@ -17,13 +16,16 @@ namespace telikiergasia2
         private readonly SQLiteConnection connection;
 
         private ChatSession _chatSession;
-
+        private textboxes tbManager;
 
         public Form1()
         {
             InitializeComponent();
+
             this.MaximumSize = new System.Drawing.Size(1116, 825);
             this.MinimumSize = new System.Drawing.Size(1116, 825);
+
+            tbManager = new textboxes(textBox1, richTextBox1);
 
             connection = new SQLiteConnection(connectionString);
             textBox1.PlaceholderText = "Τι σκέφτεσται σήμερα?";
@@ -39,24 +41,26 @@ namespace telikiergasia2
                     Question TEXT NOT NULL,
                     Answer TEXT NOT NULL
                 );";
+
             using (var cmd = new SQLiteCommand(createTable, connection))
             {
                 cmd.ExecuteNonQuery();
             }
+
             connection.Close();
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text)) return;
+            if (string.IsNullOrWhiteSpace(tbManager.UserText)) return;
 
-            string userPrompt = textBox1.Text;
+            string userPrompt = tbManager.UserText;
 
-            richTextBox1.AppendText($"Χρήστης: {userPrompt}\n");
+            tbManager.AppendChat($"Χρήστης: {userPrompt}\n");
 
-            textBox1.Clear();
+            tbManager.ClearInput();
             button1.Enabled = false;
-            textBox1.Enabled = false;
+            tbManager.EnableInput(false);
 
             try
             {
@@ -69,20 +73,20 @@ namespace telikiergasia2
 
                 var response = await _chatSession.GenerateContentAsync(userPrompt);
 
-                richTextBox1.AppendText($"AI: {response.Text}\n");
-                richTextBox1.AppendText("-----\n");
+                tbManager.AppendChat($"AI: {response.Text}\n");
+                tbManager.AppendChat("-----\n");
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Σφάλμα: {ex.Message}");
-                richTextBox1.AppendText("AI: Σφάλμα κατά την απάντηση\n");
-                richTextBox1.AppendText("-----\n");
+                tbManager.AppendChat("AI: Σφάλμα κατά την απάντηση\n");
+                tbManager.AppendChat("-----\n");
             }
             finally
             {
                 button1.Enabled = true;
-                textBox1.Enabled = true;
-                textBox1.Focus();
+                tbManager.EnableInput(true);
+                tbManager.FocusInput();
             }
         }
 
@@ -106,12 +110,12 @@ namespace telikiergasia2
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    File.WriteAllText(saveFileDialog.FileName, richTextBox1.Text);
+                    File.WriteAllText(saveFileDialog.FileName, tbManager.ChatText);
                     MessageBox.Show("Η συνομιλία αποθηκεύτηκε επιτυχώς!");
                 }
             }
         }
-        
+
         private void εισαγωγηΕρώτησηςtxtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -124,7 +128,7 @@ namespace telikiergasia2
                     try
                     {
                         string fileContent = File.ReadAllText(openFileDialog.FileName);
-                        textBox1.Text = fileContent;
+                        tbManager.UserText = fileContent;
                     }
                     catch (Exception ex)
                     {
@@ -136,17 +140,17 @@ namespace telikiergasia2
 
         private void νέοςΔιάλογοςToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            richTextBox1.Clear();
-            textBox1.Clear();
+            tbManager.ClearChat();
+            tbManager.ClearInput();
             _chatSession = null;
             button1.Enabled = true;
-            textBox1.Enabled = true;
-            textBox1.Focus();
+            tbManager.EnableInput(true);
+            tbManager.FocusInput();
         }
 
         private void αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string[] lines = richTextBox1.Lines;
+            string[] lines = tbManager.ChatLines;
             string lastQuestion = "";
             string lastAnswer = "";
 
@@ -171,12 +175,14 @@ namespace telikiergasia2
             {
                 connection.Open();
                 string insertQuery = "INSERT INTO Gamemode (Question, Answer) VALUES (@q, @a)";
+
                 using (var cmd = new SQLiteCommand(insertQuery, connection))
                 {
                     cmd.Parameters.AddWithValue("@q", lastQuestion.Trim());
                     cmd.Parameters.AddWithValue("@a", lastAnswer.Trim());
                     cmd.ExecuteNonQuery();
                 }
+
                 MessageBox.Show("Η ερώτηση και η απάντηση αποθηκεύτηκαν στη βάση δεδομένων!");
             }
             catch (Exception ex)
@@ -193,11 +199,6 @@ namespace telikiergasia2
         {
             Form form2 = new DataBase();
             form2.ShowDialog();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
