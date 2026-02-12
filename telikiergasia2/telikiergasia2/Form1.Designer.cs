@@ -39,6 +39,7 @@
             προβοληΙστορικούToolStripMenuItem = new ToolStripMenuItem();
             σχετικάToolStripMenuItem = new ToolStripMenuItem();
             ηΟμάδαΜαςToolStripMenuItem = new ToolStripMenuItem();
+            στατιστικάToolStripMenuItem = new ToolStripMenuItem();
             richTextBox1 = new RichTextBox();
             textBox1 = new TextBox();
             button1 = new Button();
@@ -51,7 +52,7 @@
             menuStrip1.BackColor = Color.DimGray;
             menuStrip1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { αρχείοToolStripMenuItem, βάσηΔεδομένωνToolStripMenuItem, σχετικάToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { αρχείοToolStripMenuItem, βάσηΔεδομένωνToolStripMenuItem, σχετικάToolStripMenuItem, στατιστικάToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(8, 2, 0, 2);
@@ -131,6 +132,14 @@
             ηΟμάδαΜαςToolStripMenuItem.Size = new Size(261, 40);
             ηΟμάδαΜαςToolStripMenuItem.Text = "Η ομάδα μας";
             ηΟμάδαΜαςToolStripMenuItem.Click += ηΟμάδαΜαςToolStripMenuItem_Click;
+            // 
+            // στατιστικάToolStripMenuItem
+            // 
+            στατιστικάToolStripMenuItem.ForeColor = Color.White;
+            στατιστικάToolStripMenuItem.Name = "στατιστικάToolStripMenuItem";
+            στατιστικάToolStripMenuItem.Size = new Size(147, 36);
+            στατιστικάToolStripMenuItem.Text = "Στατιστικά";
+            στατιστικάToolStripMenuItem.Click += στατιστικάToolStripMenuItem_Click;
             // 
             // richTextBox1
             // 
@@ -220,5 +229,6 @@
         private ToolStripMenuItem αποθήκευσηΤρέχουσαςΑπάντησηςToolStripMenuItem;
         private ToolStripMenuItem προβοληΙστορικούToolStripMenuItem;
         private ToolStripMenuItem ηΟμάδαΜαςToolStripMenuItem;
+        private ToolStripMenuItem στατιστικάToolStripMenuItem;
     }
 }

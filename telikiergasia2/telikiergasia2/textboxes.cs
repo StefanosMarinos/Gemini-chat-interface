@@ -55,5 +55,9 @@ namespace telikiergasia2
         {
             textBox1.Enabled = state;
         }
+        public void FocusInput()
+        {
+            textBox1.Focus();
+        }
     }
 }

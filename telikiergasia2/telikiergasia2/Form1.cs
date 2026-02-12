@@ -210,5 +210,11 @@ namespace telikiergasia2
                 e.SuppressKeyPress = true;
             }
         }
+
+        private void στατιστικάToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form3 = new statsform();
+            form3.ShowDialog();
+        }
     }
 }
